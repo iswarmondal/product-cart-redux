@@ -7,9 +7,9 @@ const cartCount = useSelector((state: RootState)=> state.cart.products.length)
 
   return (
     <>
-      <Link to="/cart" className='btn btn-accent fixed bottom-2 right-20 z-50'>
+      <Link to="/cart" className='btn btn-accent w-52 fixed bottom-4 right-10 z-50 backdrop-blur-md text-white hover:text-black'>
         Cart
-        <div className="badge badge-secondary">{cartCount<=99 ? cartCount : "99+"}</div>
+        <div className="badge">{cartCount<=99 ? cartCount : "99+"}</div>
       </Link>
     </>
   )

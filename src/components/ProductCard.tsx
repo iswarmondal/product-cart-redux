@@ -36,19 +36,19 @@ const ProductCard = (props: PropTypes) => {
     isAlreadyAddedToCart ? setIsAddedToCart(true) : null;
   });
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-80 bg-base-100 shadow-md">
       <figure>
-        <img height="300px" src={props.image} alt={props.title} />
+        <img className="max-h-56" src={props.image} alt={props.title} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{props.title}</h2>
-        <h3 className="primary">${props.price}</h3>
+        <h3 className="primary text-green-600">${props.price}</h3>
         <p>{props.description.slice(0, 100)}...</p>
         <div className="card-actions justify-end">
           {isAddedToCart
             ? (
               <button
-                className="btn btn-primary bg-gray-300 hover:bg-gray-400"
+                className="btn btn-primary text-black bg-gray-300 hover:bg-gray-400"
                 onClick={() =>
                   handleRemoveFromCart(props.productId, props.price)}
               >
