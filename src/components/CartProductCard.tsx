@@ -39,7 +39,6 @@ const CartProductCard = (props: PropTypes) => {
 
   const addOne = () => {
     if (!productData) return;
-
     dispatch(
       addProduct({ productId: productData.id, price: productData.price }),
     );
@@ -48,9 +47,8 @@ const CartProductCard = (props: PropTypes) => {
   const removeOne = () => {
     if (!productData) return;
     console.log({ productId: productData.id, price: productData.price });
-
     dispatch(
-      removeOneProduct({ productId: props.id, price: productData.price }),
+      removeOneProduct({ productId: productData.id, price: productData.price }),
     );
   };
 
@@ -70,7 +68,7 @@ const CartProductCard = (props: PropTypes) => {
     setProductCount(
       cart.products.filter((element) => element === productData?.id).length,
     );
-  }, [cart.products]);
+  }, [cart]);
 
   if (productData === null) return null;
 

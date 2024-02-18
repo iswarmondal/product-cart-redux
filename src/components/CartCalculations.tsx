@@ -10,7 +10,7 @@ const CartCalculations = () =>{
 
       <br/>
 
-      <h2 className="text-2xl">Total amount is {cart.totalAmount.toFixed(2)}</h2>
+      <h2 className="text-2xl">Total amount is {Math.abs(cart.totalAmount).toFixed(2)}</h2>
     </div>
   )
 }

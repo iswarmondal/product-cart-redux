@@ -39,7 +39,7 @@ export const cartSlice = createSlice({
 
     removeOneProduct: (state, action: PayloadAction<RemoveProduct>) => {
       state.products.splice(
-        state.products.indexOf(action.payload.productId),
+        state.products.lastIndexOf(action.payload.productId),
         1,
       );
       state.totalAmount -= action.payload.price;
